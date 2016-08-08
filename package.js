@@ -1,15 +1,17 @@
 Package.describe({
-    name: "valudio:jquery-stickytabs",
-    summary: "This is a Meteor package for jquery-stickytabs (https://github.com/aidanlister/jquery-stickytabs) by Aidan Lister (https://github.com/aidanlister). It provides persistant state (back and forward button support) for Bootstrap tabs http://aidanlister.com/2014/03/persisting-the-tab-state-in-bootstrap/",
-    version: "1.0.0",
-    git: "https://github.com/valudio/meteor-jquery-stickytabs"
+  name: 'valudio:jquery-stickytabs',
+  version: '0.0.1',
+  // Brief, one-line summary of the package.
+  summary: "This is a Meteor package for jquery-stickytabs (https://github.com/aidanlister/jquery-stickytabs)",
+  // URL to the Git repository containing the source code for this package.
+  git: "https://github.com/valudio/meteor-jquery-stickytabs",
+  // By default, Meteor will default to using README.md for documentation.
+  // To avoid submitting documentation, set this field to null.
+  documentation: 'README.md'
 });
 
-Package.on_use(function(api) {
-    api.versionsFrom("METEOR@0.9.0");
-    api.use("jquery", "client");
-
-    api.add_files(["lib/jquery.stickytabs.js"], "client", {
-        bare: true
-    });
+Package.onUse(function(api) {
+  api.versionsFrom('1.4.0.1');
+  api.use('jquery', 'client');
+  api.mainModule('lib/jquery.stickytabs.js', 'client');
 });
